@@ -4,10 +4,12 @@ if (empty($_SERVER['HTTPS']) && $_SERVER['HTTP_HOST'] == 'localhost') {
     exit();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "taqueria"; 
+
+$servername = getenv('DB_HOST') !== false ? getenv('DB_HOST') : "localhost";
+$username   = getenv('DB_USER') !== false ? getenv('DB_USER') : "root";
+$password   = getenv('DB_PASS') !== false ? getenv('DB_PASS') : "";
+$dbname     = getenv('DB_NAME') !== false ? getenv('DB_NAME') : "taqueria";
+
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
