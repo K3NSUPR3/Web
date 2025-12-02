@@ -1,11 +1,5 @@
 <?php
 require_once 'auth_check.php';
-
-
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
