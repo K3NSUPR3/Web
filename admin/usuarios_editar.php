@@ -29,5 +29,6 @@ $u = $res->fetch_assoc();
     </select><br><br>
     <button type="submit" name="actualizar">Actualizar</button>
   </form>
+  <?php include("../footer.php"); ?>
 </body>
 </html>

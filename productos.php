@@ -12,6 +12,7 @@ require_once 'auth_check.php';
 <body>
 
   <?php include("header.php"); ?>
+  <?php include("cabecera.php"); ?>
 
   <main>
     <section class="Menu-section">

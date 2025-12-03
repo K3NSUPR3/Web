@@ -13,6 +13,7 @@ require_once 'auth_check.php';
 </head>
 <body>
   <?php include("header.php"); ?>
+  <?php include("cabecera.php"); ?>
 
   <main>
     <h1>Servicios</h1>

@@ -1,38 +1,9 @@
-
-    .login-page {
-      min-height: calc(100vh - 100px);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 30px 12px;
-      background: linear-gradient(180deg, #fffef6 0%, #fff 100%);
-    }
-    .login-card {
-      width: 400px;
-      max-width: 96%;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      padding: 22px;
-      text-align:center;
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-    .login-logo { font-size:22px; margin-bottom:10px; color:#d94f1f; font-weight:700; }
-    .login-card h2 { margin:8px 0 14px; font-size:20px; color:#222; }
-    .form-row { margin-bottom:12px; text-align: left; }
-    .form-row label { display:block; font-size:13px; margin-bottom:6px; color:#444; }
-    .form-row input {
-      width:100%; padding:10px 12px; border:1px solid #e2e2e2; border-radius:8px; font-size:14px;
-      box-sizing:border-box;
-    }
-    .btn-login {
-      display:inline-block; width:100%; background:#d94f1f; color:#fff; border:none; 
-      padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:600;
-    }
-    .btn-login:hover { background:#c64014; }
-    
-    .msg-error { color:#b00020; background: #fff0f0; padding: 10px; border-radius: 6px; font-size:13px; margin-bottom:15px; }
-    .msg-success { color:#006e2e; background: #f0fff4; padding: 10px; border-radius: 6px; font-size:13px; margin-bottom:15px; }
-    
-    .login-footer { margin-top:15px; font-size:13px; color:#666; }
-    .login-footer a { color:#d94f1f; text-decoration:none; font-weight:600; }
+.login-page { min-height: 80vh; display:flex; align-items:center; justify-content:center; padding: 20px; }
+    .login-card { width: 400px; max-width: 100%; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+    .form-row { margin-bottom: 12px; text-align: left; }
+    .form-row label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
+    .form-row input { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+    .btn-login { width: 100%; padding: 10px; background: #d94f1f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+    .btn-login:hover { background: #c0392b; }
+    .msg-error { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 10px; border-radius: 4px; margin-bottom: 10px; }
+    .msg-success { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 10px; border-radius: 4px; margin-bottom: 10px; }
