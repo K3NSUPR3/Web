@@ -22,7 +22,7 @@ if (isset($_GET['q'])) {
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Productos</title>
-    <link rel="stylesheet" href="formularios.css">
+    <link rel="stylesheet" href="css/formularios.css">
 </head>
 <body>
     <h1>Formulario de Alta de Producto</h1>
@@ -44,7 +44,20 @@ if (isset($_GET['q'])) {
         <label>Imagen:</label>
         <input type="file" name="imagen">
 
-        <button type="submit" name="guardar">Guardar</button>
+        <div class="acciones-form" style="margin-top: 20px;">
+            <button type="submit" name="guardar">Guardar</button>
+            
+            <a href="productos.php" style="
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #6c757d;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-left: 10px;
+                font-family: Arial, sans-serif;
+            ">Cancelar / Volver</a>
+        </div>
     </form>
     <script>
      document.getElementById('nombre').addEventListener('input', function() {
@@ -76,5 +89,21 @@ if (isset($_GET['q'])) {
         xhr.send();
      });
     </script>
+    <footer>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="¡CSS Válido!">
+            </a>
+        </p>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                    alt="¡CSS Válido!">
+            </a>
+        </p>
+    </footer>
 </body>
 </html>

@@ -7,7 +7,9 @@ require_once 'auth_check.php';
 <head>
   <meta charset="UTF-8">
   <title>Servicios - Taquería</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/main.js"></script>
 </head>
 <body>
   <?php include("header.php"); ?>
@@ -39,7 +41,6 @@ require_once 'auth_check.php';
   </main>
 
   <?php include("footer.php"); ?>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/main.js"></script>
+  
 </body>
 </html>

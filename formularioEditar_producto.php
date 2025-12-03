@@ -15,7 +15,10 @@ $esAdmin = isset($_SESSION['user']) && $_SESSION['user']['rol'] === 'admin';
 <head>
     <meta charset="UTF-8">
     <title>Editar Producto</title>
-    <link rel="stylesheet" href="formularios.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+    <script src="js/validaciones.js"></script>
 </head>
 <body>
     <h1>Editar Producto</h1>
@@ -23,7 +26,7 @@ $esAdmin = isset($_SESSION['user']) && $_SESSION['user']['rol'] === 'admin';
     
     <?php if (!$esAdmin): ?>
     <div class="advertencia" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 15px 0; border-radius: 8px; color: #856404; font-weight: bold;">
-        ⚠️ <strong>MODO SOLO LECTURA</strong> - No tienes permisos para modificar productos
+         <strong>MODO SOLO LECTURA</strong> - No tienes permisos para modificar productos
     </div>
     <?php endif; ?>
  
@@ -47,12 +50,24 @@ $esAdmin = isset($_SESSION['user']) && $_SESSION['user']['rol'] === 'admin';
         <input type="file" name="imagen" <?php if (!$esAdmin) echo 'disabled'; ?>>
 
         <button type="submit" name="actualizar" <?php if (!$esAdmin) echo 'disabled'; ?>>
-            <?php echo $esAdmin ? 'Actualizar' : '❌ Sin permisos'; ?>
+            <?php echo $esAdmin ? 'Actualizar' : ' Sin permisos'; ?>
         </button>
     </form>
-    
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
-    <script src="js/validaciones.js"></script>
+    <footer>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="¡CSS Válido!">
+            </a>
+        </p>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                    alt="¡CSS Válido!">
+            </a>
+        </p>
+    </footer>
 </body>
 </html>

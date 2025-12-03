@@ -5,7 +5,7 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['rol'] !== 'admin'){
 
     die("
         <div style='text-align:center; padding:50px; font-family: Arial, sans-serif;'>
-            <h2 style='color:red;'>❌ Acceso Denegado</h2>
+            <h2 style='color:red;'> Acceso Denegado</h2>
             <p style='font-size: 18px;'>No tienes permisos para modificar productos.</p>
             <p>Contacta al administrador si necesitas hacer cambios.</p>
             <br>

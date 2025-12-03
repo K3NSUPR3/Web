@@ -1,0 +1,21 @@
+  .barra-sesion {
+            text-align: right;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .barra-sesion a {
+            color: #d94f1f;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 10px;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .barra-sesion a:hover {
+            text-decoration: none;
+            background-color: #e8e8e8;
+        }

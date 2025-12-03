@@ -6,30 +6,8 @@ require_once 'auth_check.php';
 <head>
     <meta charset="UTF-8">
     <title>Taquería El Buen Taco</title>
-    <link rel="stylesheet" href="estilos.css">
-    <style>
-        .barra-sesion {
-            text-align: right;
-            background-color: #f4f4f4;
-            padding: 10px 20px;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-        .barra-sesion a {
-            color: #d94f1f;
-            font-weight: bold;
-            text-decoration: none;
-            margin-left: 10px;
-            padding: 4px 8px;
-            border-radius: 3px;
-            transition: background-color 0.3s;
-        }
-        .barra-sesion a:hover {
-            text-decoration: none;
-            background-color: #e8e8e8;
-        }
-    </style>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <?php include("header.php"); ?>

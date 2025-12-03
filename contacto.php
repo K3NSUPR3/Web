@@ -7,14 +7,17 @@ require_once 'auth_check.php';
 <head>
     <meta charset="UTF-8">
     <title>Contacto - Taquería</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 
     <?php include("header.php"); ?>
 
     <main class="contacto-section">
-        <h1>📩 Contáctanos</h1>
+        <h1> Contáctanos</h1>
         <p>¿Tienes alguna duda o quieres hacer un pedido? ¡Escríbenos!</p>
 
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="contacto-form">
@@ -38,31 +41,29 @@ require_once 'auth_check.php';
             </div>
         </form>
 
-        <?php
-        if(isset($_POST['enviar'])){
-            $nombre = $_POST['nombre'];
-            $correo = $_POST['correo'];
-            $mensaje = $_POST['mensaje'];
+            <?php
+            if(isset($_POST['enviar'])){
+                $nombre = $_POST['nombre'];
+                $correo = $_POST['correo'];
+                $mensaje = $_POST['mensaje'];
 
-            // Preparar consulta para evitar inyección SQL
-            $stmt = $conn->prepare("INSERT INTO contacto(nombre, correo, mensaje, fecha) VALUES (?, ?, ?, NOW())");
-            $stmt->bind_param("sss", $nombre, $correo, $mensaje);
+                // Preparar consulta para evitar inyección SQL
+                $stmt = $conn->prepare("INSERT INTO contacto(nombre, correo, mensaje, fecha) VALUES (?, ?, ?, NOW())");
+                $stmt->bind_param("sss", $nombre, $correo, $mensaje);
 
-            if($stmt->execute()){
-                echo "<p class='success'> Mensaje enviado correctamente</p>";
-            } else {
-                echo "<p class='error'> Error: ".htmlspecialchars($stmt->error)."</p>";
+                if($stmt->execute()){
+                    echo "<p class='success'> Mensaje enviado correctamente</p>";
+                } else {
+                    echo "<p class='error'> Error: ".htmlspecialchars($stmt->error)."</p>";
+                }
+
+                $stmt->close();
             }
-
-            $stmt->close();
-        }
-        ?>
+            ?>
     </main>
-
     <?php include("footer.php"); ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
-    <script src="js/main.js"></script>
-
+<footer>
+  
+</footer>
 </body>
 </html>

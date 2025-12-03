@@ -2,13 +2,12 @@
 include("database.php");
 require_once 'auth_check.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Menú - Taquería El Buen Taco</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
@@ -40,11 +39,11 @@ require_once 'auth_check.php';
                     <p class="precio"><b>Precio:</b> $<?= $precio ?></p>
 
                     <div class="acciones">
-                        <a href="formularioEditar_producto.php?id=<?= $id ?>" class="btn btn-editar">✏️ Editar</a>
+                        <a href="formularioEditar_producto.php?id=<?= $id ?>" class="btn btn-editar"> Editar</a>
 
                         <form method="POST" action="procesar_producto.php" onsubmit="return confirm('¿Seguro que deseas eliminar este producto?');" style="display:inline;">
                             <input type="hidden" name="eliminar_id" value="<?= $id ?>">
-                            <button type="submit" class="btn btn-eliminar">🗑 Eliminar</button>
+                            <button type="submit" class="btn btn-eliminar"> Eliminar</button>
                         </form>
                     </div>
                 </article>
@@ -57,12 +56,10 @@ require_once 'auth_check.php';
       </div>
 
       <div style="text-align:center; margin: 20px;">
-        <a href="formulario.php" class="btn btn-agregar">➕ Agregar Producto</a>
+        <a href="formulario.php" class="btn btn-agregar"> Agregar Producto</a>
       </div>
     </section>
   </main>
-
   <?php include("footer.php"); ?>
-
 </body>
 </html>

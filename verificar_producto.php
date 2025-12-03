@@ -19,6 +19,5 @@ if(isset($_POST['nombre'])) {
     exit;
 }
 
-// Si no se envió nombre
 echo json_encode(['existe' => false]);
 ?>
