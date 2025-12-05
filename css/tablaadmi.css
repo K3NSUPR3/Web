@@ -1,0 +1,126 @@
+/* admin/tablaadmi.css */
+
+/* Variables de color para un tema gris moderno */
+:root {
+    --color-primary: #4a5568; /* Gris oscuro para headers */
+    --color-secondary: #718096; /* Gris medio para botones secundarios */
+    --color-background: #f7f7f7; /* Fondo general */
+    --color-text: #2d3748; /* Texto principal */
+    --color-border: #e2e8f0; /* Bordes de tabla */
+    --color-hover: #edf2f7; /* Efecto hover */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Sección de Botones Superiores */
+.acciones-top {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+/* Estilos de la Tabla */
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Quitar doble borde */
+    margin-top: 20px;
+    border: 1px solid var(--color-border); /* Borde exterior */
+    border-radius: 6px;
+    overflow: hidden; /* Necesario para que el borde redondeado se vea bien */
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.data-table thead th {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-bottom: none;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none; /* Quitar borde del último elemento */
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--color-hover);
+    transition: background-color 0.2s;
+}
+
+/* Estilos de los Botones de Acción (Editar/Eliminar) */
+.acciones {
+    white-space: nowrap; /* Evita que los botones se rompan de línea */
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 2px 4px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-primary { /* Botón Crear Usuario */
+    background-color: #38a169; /* Verde (para acción positiva) */
+    color: white;
+}
+
+.btn-secondary { /* Botón Volver */
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.btn-edit { /* Botón Editar */
+    background-color: #3182ce; /* Azul */
+    color: white;
+}
+
+.btn-delete { /* Botón Eliminar */
+    background-color: #e53e3e; /* Rojo */
+    color: white;
+}
+
+.btn-logout {
+    background-color: #a0aec0; /* Gris claro */
+    color: var(--color-text);
+    margin-left: auto; /* Mueve el botón de logout al extremo derecho */
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
