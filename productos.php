@@ -1,6 +1,9 @@
 <?php
 include("database.php");
 require_once 'auth_check.php';
+
+$es_admin_o_empleado = isset($_SESSION['user']) && 
+                       ($_SESSION['user']['rol'] === 'admin' || $_SESSION['user']['rol'] === 'empleado');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,14 +42,16 @@ require_once 'auth_check.php';
                     <p class="descripcion"><?= $descripcion ?></p>
                     <p class="precio"><b>Precio:</b> $<?= $precio ?></p>
 
+                    <?php if($es_admin_o_empleado): ?>
                     <div class="acciones">
-                        <a href="formularioEditar_producto.php?id=<?= $id ?>" class="btn btn-editar"> Editar</a>
+                        <a href="formularioEditar_producto.php?id=<?= $id ?>" class="btn btn-editar">✏️ Editar</a>
 
                         <form method="POST" action="procesar_producto.php" onsubmit="return confirm('¿Seguro que deseas eliminar este producto?');" style="display:inline;">
                             <input type="hidden" name="eliminar_id" value="<?= $id ?>">
-                            <button type="submit" class="btn btn-eliminar"> Eliminar</button>
+                            <button type="submit" class="btn btn-eliminar">🗑️ Eliminar</button>
                         </form>
                     </div>
+                    <?php endif; ?>
                 </article>
         <?php
             }
@@ -56,9 +61,11 @@ require_once 'auth_check.php';
         ?>
       </div>
 
+      <?php if($es_admin_o_empleado): ?>
       <div style="text-align:center; margin: 20px;">
-        <a href="formulario.php" class="btn btn-agregar"> Agregar Producto</a>
+        <a href="formulario.php" class="btn btn-agregar">➕ Agregar Producto</a>
       </div>
+      <?php endif; ?>
     </section>
   </main>
   <?php include("footer.php"); ?>

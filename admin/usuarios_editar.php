@@ -11,7 +11,7 @@ $u = $res->fetch_assoc();
 <html lang="es">
 <head>
   <meta charset="utf-8"><title>Editar Usuario</title>
-  <link rel="stylesheet" href="usuarios.css">
+  <link rel="stylesheet" href="../css/usuarios.css">
 </head>
 <body>
   <h1>Editar Usuario</h1>

@@ -8,7 +8,7 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['rol'] !== 'admin'){ header("L
 <head>
   <meta charset="utf-8">
   <title>Crear Usuario</title>
-  <link rel="stylesheet" href="usuarios.css">
+  <link rel="stylesheet" href="../css/usuarios.css">
 </head>
 <body>
   <h1>Crear Usuario</h1>
@@ -108,7 +108,7 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['rol'] !== 'admin'){ header("L
                   data: { correo: correo },
                   success: function(response) {
                       if(response.existe) {
-                          $('#mensaje-correo').html('❌ Este correo ya está registrado').css('color', 'red');
+                          $('#mensaje-correo').html('Este correo ya está registrado').css('color', 'red');
                           $('#correo').addClass('error');
                           correoValido = false;
                       } else {
@@ -143,7 +143,7 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['rol'] !== 'admin'){ header("L
       $('#formUsuario').on('submit', function(e) {
           if(!usuarioValido || !correoValido) {
               e.preventDefault();
-              alert('❌ Verifica que el usuario y correo estén disponibles antes de crear.');
+              alert('Verifica que el usuario y correo estén disponibles antes de crear.');
               return false;
           }
       });

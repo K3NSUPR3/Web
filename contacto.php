@@ -1,6 +1,11 @@
-<?php include("database.php");
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include("database.php");
 require_once 'auth_check.php';
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,8 +23,41 @@ require_once 'auth_check.php';
     <?php include("cabecera.php"); ?>
 
     <main class="contacto-section">
-        <h1> Contáctanos</h1>
+        <h1>Contáctanos</h1>
         <p>¿Tienes alguna duda o quieres hacer un pedido? ¡Escríbenos!</p>
+
+        <?php
+        if(isset($_POST['enviar'])){
+            $nombre = trim($_POST['nombre']);
+            $correo = trim($_POST['correo']);
+            $mensaje = trim($_POST['mensaje']);
+
+            if(empty($nombre) || empty($correo) || empty($mensaje)){
+                echo "<p class='error'>⚠️ Por favor completa todos los campos</p>";
+            } else {
+                try {
+                    // Preparar consulta para evitar inyección SQL
+                    $stmt = $conn->prepare("INSERT INTO contacto(nombre, correo, mensaje, fecha) VALUES (?, ?, ?, NOW())");
+                    
+                    if(!$stmt){
+                        throw new Exception("Error al preparar consulta: " . $conn->error);
+                    }
+                    
+                    $stmt->bind_param("sss", $nombre, $correo, $mensaje);
+
+                    if($stmt->execute()){
+                        echo "<p class='success'> Mensaje enviado correctamente</p>";
+                    } else {
+                        throw new Exception("Error al ejecutar: " . $stmt->error);
+                    }
+
+                    $stmt->close();
+                } catch(Exception $e) {
+                    echo "<p class='error'> Error: " . htmlspecialchars($e->getMessage()) . "</p>";
+                }
+            }
+        }
+        ?>
 
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="contacto-form">
             <div class="form-group">
@@ -41,30 +79,8 @@ require_once 'auth_check.php';
                 <button type="submit" name="enviar">Enviar Mensaje</button>
             </div>
         </form>
-
-            <?php
-            if(isset($_POST['enviar'])){
-                $nombre = $_POST['nombre'];
-                $correo = $_POST['correo'];
-                $mensaje = $_POST['mensaje'];
-
-                // Preparar consulta para evitar inyección SQL
-                $stmt = $conn->prepare("INSERT INTO contacto(nombre, correo, mensaje, fecha) VALUES (?, ?, ?, NOW())");
-                $stmt->bind_param("sss", $nombre, $correo, $mensaje);
-
-                if($stmt->execute()){
-                    echo "<p class='success'> Mensaje enviado correctamente</p>";
-                } else {
-                    echo "<p class='error'> Error: ".htmlspecialchars($stmt->error)."</p>";
-                }
-
-                $stmt->close();
-            }
-            ?>
     </main>
+    
     <?php include("footer.php"); ?>
-<footer>
-  
-</footer>
 </body>
 </html>

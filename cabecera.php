@@ -3,7 +3,7 @@
             Bienvenido, <strong><?= htmlspecialchars($_SESSION['user']['nombre']) ?></strong> |
             
             <?php if ($_SESSION['user']['rol'] === 'admin'): ?>
-                <a href="admin/usuarios_listar.php">Administración</a> |
+                <a href="admin/usuarios_crear.php">Administración</a> |
             <?php endif; ?>
 
             <?php if ($_SESSION['user']['rol'] === 'empleado'): ?>

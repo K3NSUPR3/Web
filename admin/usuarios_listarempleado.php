@@ -10,12 +10,12 @@ $res = $conn->query("SELECT id, username, nombre, correo, rol, creado_at FROM us
 <html lang="es">
 <head>
   <meta charset="utf-8"><title>Usuarios</title>
-  <link rel="stylesheet" href="usuarios.css">
+  <link rel="stylesheet" href="../css/usuarios.css">
 </head>
 <body>
   <h1>Usuarios</h1>
    <a href="../productos.php">Volver</a> | <a href="../logout.php">Cerrar sesión</a>
-  <table border="1" cellpadding="6">
+  <table cellpadding="6">
     <tr><th>ID</th><th>Usuario</th><th>Nombre</th><th>Correo</th><th>Rol</th></tr>
     <?php while($u = $res->fetch_assoc()): ?>
       <tr>
