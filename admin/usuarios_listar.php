@@ -10,6 +10,7 @@ $res = $conn->query("SELECT id, username, nombre, correo, rol FROM usuarios ORDE
 <head>
   <meta charset="utf-8"><title>Usuarios</title>
   <link rel="stylesheet" href="../css/usuarios.css">
+  <link rel="stylesheet" href="../css/tablaadmi.css">
 </head>
 <body>
   <h1>Usuarios</h1>
